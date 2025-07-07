@@ -1,9 +1,9 @@
+<img width="1467" alt="raft1" src="https://github.com/user-attachments/assets/bfb7f22e-82e2-45d6-8c0d-4c4626f412ef" />
 
-# Raft Consensus Algorithm (Go)<img width="1436" alt="raft2" src="https://github.com/user-attachments/assets/4452db41-ebd4-4f50-ae28-d64b225c2a18" />
-<img width="1467" alt="raft1" src="https://github.com/user-attachments/assets/65f70233-7c76-43db-a2c2-df8d8707f5d3" />
+<img width="1436" alt="raft2" src="https://github.com/user-attachments/assets/b35e5d5d-3d05-4a7d-9760-d179f73947d0" />
 
-
-This project is a simple implementation of the Raft consensus algorithm written in Go.
+This project is a simple implementation of the Raft consensus algorithm ![Uploading raft1.png…]()
+written in Go.
 
 ## Getting Started (with Docker)
 
