@@ -2,8 +2,7 @@
 
 <img width="1436" alt="raft2" src="https://github.com/user-attachments/assets/b35e5d5d-3d05-4a7d-9760-d179f73947d0" />
 
-This project is a simple implementation of the Raft consensus algorithm ![Uploading raft1.png…]()
-written in Go.
+This project is a simple implementation of the Raft consensus algorithm written in Go.
 
 ## Getting Started (with Docker)
 
