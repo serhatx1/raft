@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  node1:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - NODE_ID=1
+      - NODE_ADDR=:8001
+      - NODE_PEERS=http://node2:8002,http://node3:8003
+    command: ["./raft"]
+  node2:
+    build: .
+    ports:
+      - "8002:8002"
+    environment:
+      - NODE_ID=2
+      - NODE_ADDR=:8002
+      - NODE_PEERS=http://node1:8001,http://node3:8003
+    command: ["./raft"]
+  node3:
+    build: .
+    ports:
+      - "8003:8003"
+    environment:
+      - NODE_ID=3
+      - NODE_ADDR=:8003
+      - NODE_PEERS=http://node1:8001,http://node2:8002
+    command: ["./raft"] 
