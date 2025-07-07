@@ -1,4 +1,7 @@
-# Raft Consensus Algorithm (Go)
+
+# Raft Consensus Algorithm (Go)<img width="1436" alt="raft2" src="https://github.com/user-attachments/assets/4452db41-ebd4-4f50-ae28-d64b225c2a18" />
+<img width="1467" alt="raft1" src="https://github.com/user-attachments/assets/65f70233-7c76-43db-a2c2-df8d8707f5d3" />
+
 
 This project is a simple implementation of the Raft consensus algorithm written in Go.
 
