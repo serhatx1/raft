@@ -1,67 +1,67 @@
 # Raft Consensus Algorithm (Go)
 
-Bu proje, Go ile yazılmış basit bir Raft consensus algoritması örneğidir.
+This project is a simple implementation of the Raft consensus algorithm written in Go.
 
-## Başlatma (Docker ile)
+## Getting Started (with Docker)
 
-Projeyi Docker ve docker-compose ile kolayca başlatabilirsiniz.
+You can easily start the project using Docker and docker-compose.
 
-### 1. Docker image oluşturun ve node'ları başlatın
+### 1. Build the Docker image and start the nodes
 
 ```sh
 docker-compose up --build
 ```
 
-Bu komut, üç adet raft node'u başlatır:
+This command will start three raft nodes:
 - Node 1: http://localhost:8001
 - Node 2: http://localhost:8002
 - Node 3: http://localhost:8003
 
-### 2. API Uç Noktaları
+### 2. API Endpoints
 
-Her node aşağıdaki HTTP endpoint'lerini sunar:
-- `/` : Basit karşılama mesajı
-- `/request-vote` : Raft seçim isteği (POST)
+Each node exposes the following HTTP endpoints:
+- `/` : Simple welcome message
+- `/request-vote` : Raft vote request (POST)
 - `/heartbeat` : Raft heartbeat (POST)
 
-### 3. Ortam Değişkenleri
+### 3. Environment Variables
 
-docker-compose ile başlatırken her node için şu ortam değişkenleri ayarlanır:
-- `NODE_ID` : Node'un benzersiz ID'si
-- `NODE_ADDR` : Node'un dinlediği adres (örn. :8001)
-- `NODE_PEERS` : Virgülle ayrılmış diğer node adresleri (örn. http://node2:8002,http://node3:8003)
+When started with docker-compose, each node is configured with the following environment variables:
+- `NODE_ID` : Unique ID of the node
+- `NODE_ADDR` : Address the node listens on (e.g. :8001)
+- `NODE_PEERS` : Comma-separated list of other node addresses (e.g. http://node2:8002,http://node3:8003)
 
-> Not: Varsayılan olarak, kodun environment değişkenlerini okuması için main.go'da güncelleme yapmanız gerekebilir.
+> Note: By default, the code expects to read these environment variables. If you run the code manually, you may need to provide them.
 
-## Manuel Başlatma (Geliştiriciler için)
+## Manual Start (for Developers)
 
-Go yüklü ise, projeyi manuel başlatmak için:
+If you have Go installed, you can run the project manually:
 
 ```sh
 go run main.go
 ```
 
-## Lisans
+## License
 
 MIT
 
-## Klasör Yapısı
+## Directory Structure
 
-- `cmd/node.go`: Node başlatma, RPC server/client
-- `internal/raft/state.go`: Node state ve term yönetimi
+- `cmd/node.go`: Node start, RPC server/client
+- `internal/raft/state.go`: Node state and term management
 - `internal/raft/rpc.go`: RequestVote, AppendEntries RPC
-- `internal/raft/election.go`: Lider seçimi logic
-- `internal/raft/log.go`: Log entry yönetimi
-- `internal/statemachine.go`: Commit edilen komutları işleyen logic
-- `test/`: Unit ve integration testler
+- `internal/raft/election.go`: Lider selection logic
+- `internal/raft/log.go`: Log entry management
+- `internal/statemachine.go`: Logic to handle committed commands
+- `test/`: Unit and integration tests
 
-## Kurulum
+## Setup
 
 ```sh
 go mod tidy
 go build ./cmd/node.go
 ```
 
-## Açıklama
+## Explanation
 
-Her dosya ve klasör, Raft algoritmasının farklı bir sorumluluğunu üstlenir. Detaylı açıklamalar ilgili dosyalarda yer alacaktır.
+Each file and directory serves a different responsibility in the Raft algorithm. Detailed explanations will be found in the relevant files.
